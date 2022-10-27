@@ -24,7 +24,7 @@ export class Player {
       new Jumping(this),
       new Falling(this),
     ];
-    this.currentState = this.states[0];
+    this.currentState = this.states[1];
     this.currentState.enter();
   }
   update(input, deltaTime) {

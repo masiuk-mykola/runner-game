@@ -1,4 +1,4 @@
-import { Sitting, Running, Jumping, Falling } from "./playerStates.js";
+import { Sitting, Running, Jumping, Falling } from './playerStates.js';
 
 export class Player {
   constructor(game) {
@@ -9,7 +9,7 @@ export class Player {
     this.y = this.game.height - this.height - this.game.groundMargin;
     this.vy = 0;
     this.weight = 1;
-    this.image = document.getElementById("player");
+    this.image = document.getElementById('player');
     this.frameX = 0;
     this.frameY = 0;
     this.maxFrame;
@@ -18,12 +18,7 @@ export class Player {
     this.frameTimer = 0;
     this.speed = 0;
     this.maxSpeed = 10;
-    this.states = [
-      new Sitting(this),
-      new Running(this),
-      new Jumping(this),
-      new Falling(this),
-    ];
+    this.states = [new Sitting(this), new Running(this), new Jumping(this), new Falling(this)];
     this.currentState = this.states[0];
     this.currentState.enter();
   }
@@ -31,12 +26,11 @@ export class Player {
     this.currentState.handleInput(input);
     // horizontal movement
     this.x += this.speed;
-    if (input.includes("ArrowRight")) this.speed = this.maxSpeed;
-    else if (input.includes("ArrowLeft")) this.speed = -this.maxSpeed;
+    if (input.includes('ArrowRight')) this.speed = this.maxSpeed;
+    else if (input.includes('ArrowLeft')) this.speed = -this.maxSpeed;
     else this.speed = 0;
     if (this.x < 0) this.x = 0;
-    if (this.x > this.game.width - this.width)
-      this.x = this.game.width - this.width;
+    if (this.x > this.game.width - this.width) this.x = this.game.width - this.width;
     // vertical movement
     this.y += this.vy;
     if (!this.onGround()) this.vy += this.weight;

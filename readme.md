@@ -16,4 +16,4 @@ Link to game [here](https://masiuk-mykola.github.io/runner-game/).
 
 ## Screenshot
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://github.com/masiuk-mykola/runner-game/blob/main/imgs/game.png?raw=true)

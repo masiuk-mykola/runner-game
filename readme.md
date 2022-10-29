@@ -16,7 +16,7 @@ Link to game [here](https://masiuk-mykola.github.io/runner-game/).
 
 ## Rules
 
-- You should collect more than 40 score per 30 seconds.
+- You should collect more than 40 score per 30 seconds by killing enemies.
 - Don't die.
 
 ## Screenshot

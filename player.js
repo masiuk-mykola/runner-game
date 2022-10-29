@@ -14,7 +14,7 @@ export class Player {
     this.image = document.getElementById('player');
     this.frameX = 0;
     this.frameY = 0;
-    this.maxFrame;
+    this.maxFrame = 8;
     this.fps = 20;
     this.frameInterval = 1000 / this.fps;
     this.frameTimer = 0;
@@ -36,11 +36,19 @@ export class Player {
     this.currentState.handleInput(input);
     // horizontal movement
     this.x += this.speed;
-    if (input.includes('ArrowRight') && this.currentState !== this.states[6])
+    if (
+      (input.includes('ArrowRight') || input.includes('d')) &&
+      this.currentState !== this.states[6]
+    ) {
       this.speed = this.maxSpeed;
-    else if (input.includes('ArrowLeft') && this.currentState !== this.states[6])
+    } else if (
+      (input.includes('ArrowLeft') || input.includes('a')) &&
+      this.currentState !== this.states[6]
+    ) {
       this.speed = -this.maxSpeed;
-    else this.speed = 0;
+    } else {
+      this.speed = 0;
+    }
     //horizontal boundaries
     if (this.x < 0) this.x = 0;
     if (this.x > this.game.width - this.width) this.x = this.game.width - this.width;
@@ -62,7 +70,6 @@ export class Player {
     }
   }
   draw(context) {
-    if (this.game.debug) context.strokeRect(this.x, this.y, this.width, this.height);
     context.drawImage(
       this.image,
       this.frameX * this.width,
@@ -83,6 +90,7 @@ export class Player {
     this.game.speed = this.game.maxSpeed * speed;
     this.currentState.enter();
   }
+
   checkColision() {
     this.game.enemies.forEach(enemy => {
       if (
@@ -106,7 +114,9 @@ export class Player {
           this.setState(6, 0);
           this.game.score -= 5;
           this.game.lives--;
-          if (this.game.lives <= 0) this.game.gameOver = true;
+          if (this.game.lives <= 0) {
+            this.game.gameOver = true;
+          }
         }
       }
     });

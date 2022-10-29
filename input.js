@@ -8,11 +8,15 @@ export class InputHandler {
           e.key === 'ArrowUp' ||
           e.key === 'ArrowLeft' ||
           e.key === 'ArrowRight' ||
+          e.key === 'a' ||
+          e.key === 'd' ||
+          e.key === 'w' ||
+          e.key === 's' ||
           e.key === 'Enter') &&
         this.keys.indexOf(e.key) === -1
       ) {
         this.keys.push(e.key);
-      } else if (e.key === 'd') this.game.debug = !this.game.debug;
+      }
     });
     window.addEventListener('keyup', e => {
       if (
@@ -20,6 +24,10 @@ export class InputHandler {
         e.key === 'ArrowUp' ||
         e.key === 'ArrowLeft' ||
         e.key === 'ArrowRight' ||
+        e.key === 'a' ||
+        e.key === 'd' ||
+        e.key === 'w' ||
+        e.key === 's' ||
         e.key === 'Enter'
       ) {
         this.keys.splice(this.keys.indexOf(e.key), 1);

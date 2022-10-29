@@ -14,6 +14,11 @@ Link to game [here](https://masiuk-mykola.github.io/runner-game/).
 - 'ArrowDown' / 's' - to sit
 - 'Enter' - to use super power
 
+## Rules
+
+- You should collect more than 40 score per 30 seconds.
+- Don't die.
+
 ## Screenshot
 
 ![App Screenshot](https://github.com/masiuk-mykola/runner-game/blob/main/imgs/game.png?raw=true)

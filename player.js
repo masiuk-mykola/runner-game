@@ -34,12 +34,17 @@ export class Player {
     this.sound.src = 'boom1.wav';
     this.hitSound = new Audio();
     this.hitSound.src = 'hit.wav';
+    this.fireSound = new Audio();
+    this.fireSound.src = 'fire3.wav';
   }
   update(input, deltaTime) {
     this.checkColision();
     this.currentState.handleInput(input);
     // horizontal movement
     this.x += this.speed;
+    if (this.currentState === this.states[4]) {
+      this.fireSound.play();
+    }
     if (
       (input.includes('ArrowRight') || input.includes('d')) &&
       this.currentState !== this.states[6]

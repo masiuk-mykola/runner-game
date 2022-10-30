@@ -121,6 +121,7 @@ export class Rolling extends State {
         this.game.player.y + this.game.player.height * 0.5
       )
     );
+
     if (!input.includes('Enter') && this.game.player.onGround()) {
       this.game.player.setState(states.RUNNING, 1);
     } else if (!input.includes('Enter') && !this.game.player.onGround()) {

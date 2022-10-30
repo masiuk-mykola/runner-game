@@ -12,11 +12,12 @@ Link to game [here](https://masiuk-mykola.github.io/runner-game/).
 - 'ArrowRight' / 'd' - to move right
 - 'ArrowUp' / 'w' - to jump
 - 'ArrowDown' / 's' - to sit
-- 'Enter' - to use super power
+- 'Enter' - to use super power №1
+- 'ArrowUp' and 'ArrowDown' - to use super power №2
 
 ## Rules
 
-- You should collect more than 40 score per 30 seconds by killing enemies.
+- You should collect more than 80 score per 1 minute by killing enemies.
 - Don't die.
 
 ## Screenshot
